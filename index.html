@@ -1,39 +1,41 @@
 <html ng-app="app">
-	<head>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>testAngular</title>
-		<script type="text/javascript" src="angular.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-		<script type="text/javascript" src="controller.js"></script>
-	</head>
-	<body ng-controller="controlador1">
-		
-<!-- 		<div ng-controller="controler2"></div> -->
-		<form ng-submit="submit()">
-			Distribuidor :
-			<select ng-model="distribuidor" ng-options="option.idDistribuidor as option.Distribuidor for option in distribuidores">
-				<option value=""></option>
-			</select><br><br>
-			Descripción: <input /><br><br>
-			<button type="reset">Limpiar</button>
-			<button type="submit">Enviar</button>
-		</form>
-		
-		<div>
-		<table>
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Descripción</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="lista in listado">
-					<td>{{lista.id}}</td>
-					<td>{{lista.descripcion}}</td>
-				</tr>
-			</tbody>
-		</table>
-		</div>
-	</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>testAngular</title>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="ui.router.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="DitribuidorFactory.js"></script>
+        <script type="text/javascript" src="controller.js"></script>
+    </head>
+    <body ng-controller="controlador1">
+
+        <!-- 		<div ng-controller="controler2"></div> -->
+        <form ng-submit="submit()">
+<!--            Distribuidor :
+            <select ng-model="distribuidor" required="" ng-options="option.idDistribuidor as option.Distribuidor for option in distribuidores">
+                <option value=""></option>
+            </select><br><br>-->
+            Descripción: <input type="text" ng-model="descripcion" /><br><br>
+            <button type="reset">Limpiar</button>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="lista in listado">
+                        <td>{{lista.IdTipoDis}}</td>
+                        <td>{{lista.Descripcion}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>
